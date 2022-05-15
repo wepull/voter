@@ -23,7 +23,7 @@ test-voter:
 	docker run --network="host"  -v /var/tmp/test:/e2e -w /e2e cypress/included:6.2.1 --browser firefox
 
 .PHONY: dockerise
-dockerise: build-voter build-ballot build-ecserver build-ec build-test
+dockerise: build-voter
 
 .PHONY: build-voter
 build-voter:
