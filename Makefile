@@ -1,5 +1,4 @@
 VOTER_IMG=voter
-TEST_IMG=service-test-suite
 COMMITID := $(shell git rev-parse HEAD)
 ifndef IMAGE_TAG
   IMAGE_TAG=latest
@@ -24,7 +23,7 @@ test-voter:
 	docker run --network="host"  -v /var/tmp/test:/e2e -w /e2e cypress/included:6.2.1 --browser firefox
 
 .PHONY: dockerise
-dockerise: build-voter build-test
+dockerise: build-voter
 
 .PHONY: build-voter
 build-voter:
@@ -36,27 +35,14 @@ else
 	docker tag ${VOTER_IMG}:${COMMITID} ${VOTER_IMG}:${IMAGE_TAG}
 endif
 
-.PHONY: build-test
-build-test:
-ifdef DOCKER_HOST
-	docker -H ${DOCKER_HOST} build -t ${TEST_IMG}:${IMAGE_TAG} -f service-test-suite/Dockerfile service-test-suite
-	docker -H ${DOCKER_HOST} tag ${TEST_IMG}:${COMMITID} ${TEST_IMG}:${IMAGE_TAG}
-else
-	docker build -t ${TEST_IMG}:${COMMITID} -f service-test-suite/Dockerfile service-test-suite
-	docker tag ${TEST_IMG}:${COMMITID} ${TEST_IMG}:${IMAGE_TAG}
-endif
-
 .PHONY: push
 push:
 	docker tag ${VOTER_IMG}:${IMAGE_TAG} zbio/${VOTER_IMG}:${IMAGE_TAG}
 	docker push zbio/${VOTER_IMG}:${IMAGE_TAG}
-	docker tag ${TEST_IMG}:${IMAGE_TAG} zbio/${TEST_IMG}:${IMAGE_TAG}
-	docker push zbio/${TEST_IMG}:${IMAGE_TAG}
 
 .PHONY: deploy
 deploy:
 	kubectl apply -f voter/voter.yaml
-	kubectl apply -f service-test-suite/test-suite.yaml
 	
 .PHONY: helm-deploy
 helm-deploy: 
