@@ -1,5 +1,6 @@
 VOTER_IMG=voter
 TEST_IMG=service-test-suite
+COMMITID := $(shell git rev-parse HEAD)
 ifndef IMAGE_TAG
   IMAGE_TAG=latest
 endif
@@ -28,17 +29,21 @@ dockerise: build-voter
 .PHONY: build-voter
 build-voter:
 ifdef DOCKER_HOST
-	docker -H ${DOCKER_HOST} build -t ${VOTER_IMG}:${IMAGE_TAG} -f voter/Dockerfile voter
+	docker -H ${DOCKER_HOST} build -t ${VOTER_IMG}:${COMMITID} -f voter/Dockerfile voter
+	docker -H ${DOCKER_HOST} tag ${VOTER_IMG}:${COMMITID} ${VOTER_IMG}:latest
 else
-	docker build -t ${VOTER_IMG}:${IMAGE_TAG} -f voter/Dockerfile voter	
+	docker build -t ${VOTER_IMG}:${IMAGE_TAG} -f voter/Dockerfile voter
+	docker tag ${VOTER_IMG}:${COMMITID} ${VOTER_IMG}:${IMAGE_TAG}
 endif
 
 .PHONY: build-test
 build-test:
 ifdef DOCKER_HOST
 	docker -H ${DOCKER_HOST} build -t ${TEST_IMG}:${IMAGE_TAG} -f service-test-suite/Dockerfile service-test-suite
+	docker -H ${DOCKER_HOST} tag ${TEST_IMG}:${COMMITID} ${TEST_IMG}:${IMAGE_TAG}
 else
-	docker build -t ${TEST_IMG}:${IMAGE_TAG} -f service-test-suite/Dockerfile service-test-suite
+	docker build -t ${TEST_IMG}:${COMMITID} -f service-test-suite/Dockerfile service-test-suite
+	docker tag ${TEST_IMG}:${COMMITID} ${TEST_IMG}:${IMAGE_TAG}
 endif
 
 .PHONY: push
