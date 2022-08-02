@@ -1,0 +1,34 @@
+@import '../../../variables.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px 0;
+
+  .label {
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: -0.08px;
+    white-space: nowrap;
+    font-family: SFProTextRegular;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.container:first-child {
+  margin-top: unset;
+}
+.container:last-child {
+  margin-bottom: unset;
+}
+
+.containerLight {
+  .label {
+    color: $text-light;
+  }
+}
+.containerWork {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

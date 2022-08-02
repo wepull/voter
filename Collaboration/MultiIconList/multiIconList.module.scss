@@ -1,0 +1,28 @@
+@import '../../../variables.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 16px;
+  .innercontainer {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+  .none {
+    margin-bottom: 20px;
+    color: $white;
+  }
+  .innercontainer:first-child {
+    margin-top: unset;
+  }
+  .innercontainer:last-child {
+    margin-bottom: unset;
+  }
+}
+
+.containerLight {
+  .none {
+    color: $text-light;
+  }
+}

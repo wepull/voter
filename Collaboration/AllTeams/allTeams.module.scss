@@ -1,0 +1,123 @@
+@import '../../../variables.scss';
+
+.container {
+  padding: 20px;
+  background-color: $containerbgdlp;
+  height: calc(100vh - 120px);
+  overflow: auto;
+
+  .tableContainer {
+    margin-left: 20px;
+
+    .tableWithoutFooterContainer {
+      overflow: auto;
+    }
+
+    .tableFooterContainer {
+      display: inline-block;
+      min-width: 100%;
+
+      .tableFooter {
+        width: 100%;
+        display: inline-block;
+        position: relative;
+        display: flex;
+        padding: 6px 0;
+        height: 20px;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        background-color: $table-footer-bg;
+        align-items: center;
+
+        img {
+          position: relative;
+          top: 2px;
+          height: 16px;
+        }
+
+        .currentPage {
+          margin-left: 20px;
+          font-size: 12px;
+          color: $white;
+        }
+
+        .pageRange {
+          margin-left: auto;
+          font-size: 12px;
+          color: $white;
+        }
+
+        .paginationButton {
+          margin: 0 20px 0 10px;
+          img {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .subHeading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+
+    .textSearch {
+      display: flex;
+      margin-left: 20px;
+
+      .searchButtons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        margin-left: 10px;
+        border-radius: 6px;
+        background-color: $collaborate-button-background;
+        border: none;
+        outline: none;
+      }
+
+      .redButton {
+        background-color: $red;
+      }
+    }
+  }
+}
+
+.containerLight {
+  background-color: $containerbgdlp-light;
+  .tableContainer {
+    .tableFooterContainer {
+      .tableFooter {
+        background-color: $table-footer-bg-light;
+        border-top: solid 1px $tableborder;
+
+        .currentPage {
+          color: $text-light;
+        }
+
+        .pageRange {
+          color: $text-light;
+        }
+      }
+    }
+  }
+
+  .heading {
+    color: $text-light;
+  }
+
+  .subHeading {
+    .textSearch {
+      .searchButtons {
+        background-color: $collaborate-button-background;
+      }
+
+      .redButton {
+        background-color: $red;
+      }
+    }
+  }
+}

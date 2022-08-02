@@ -1,0 +1,133 @@
+@import '../../../variables.scss';
+
+.container {
+  min-height: 60px;
+  height: auto;
+  border-radius: 5px;
+  background-color: $sentrequestbg;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 40px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex: 10 auto 2;
+
+  .RoosterInfo {
+    display: flex;
+    margin-left: 16px;
+    width: auto;
+    min-width: 120px;
+  }
+  .messageContainer {
+    width: auto;
+    max-width: 1400px;
+    margin-left: 60px;
+    margin-right: auto;
+    .message {
+      display: inline;
+      p {
+        font-family: SFProTextRegular;
+        font-size: 12px;
+        letter-spacing: 0.15px;
+        color: $white;
+      }
+
+      .textmessage {
+        .seemore {
+          height: 16px;
+          font-family: SFProTextRegular;
+          font-size: 12px;
+          color: $purplemain;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .actionButtons {
+    justify-content: flex-end;
+    display: flex;
+    margin-right: 30px;
+
+    .acceptbutton {
+      width: 61px;
+      height: 20px;
+      border-radius: 2px;
+      background-color: $purplemain;
+      border-color: $purplemain;
+      font-family: SFProTextMedium;
+      font-size: 12px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: -0.07px;
+      text-align: center;
+      color: $white;
+      cursor: pointer;
+    }
+    button:focus {
+      outline: none;
+    }
+    .rejectbutton {
+      width: 61px;
+      height: 20px;
+      border: none;
+      font-family: SFProTextMedium;
+      font-size: 12px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: -0.07px;
+      text-align: center;
+      color: $white;
+      cursor: pointer;
+      background: transparent;
+    }
+  }
+}
+
+.containerLight {
+  background-color: $sentrequestbg-light;
+
+  .messageContainer {
+    .message {
+      p {
+        color: $text-light;
+      }
+    }
+  }
+  .actionButtons {
+    .rejectbutton {
+      color: $text-light;
+    }
+  }
+}
+
+// need to discuss
+// .containerLight {
+//   background-color: $incomingrequestbg-light;
+
+//   .actionButtons {
+//     .rejectbutton {
+//       color: $text-light;
+//     }
+//   }
+
+//   .message {
+//     hr {
+//       border: 1px solid $hr-light;
+//     }
+
+//     p {
+//       color: $text-light;
+//     }
+//   }
+// }
+
+// .containerHeight {
+//   height: 120px;
+// }

@@ -1,0 +1,62 @@
+@import "../../../../variables.scss";
+.textSearch {
+  display: flex;
+  border-radius: 6px;
+  line-height: 23px;
+  background-color: $textsearchbg;
+  opacity: 0.9;
+
+  img {
+    background-color: $textsearchbg;
+    padding: 0 0 0 5px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+
+  input {
+    width: 100%;
+    background-color: inherit;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    flex: 1;
+    border: none;
+    font-family: SFProTextRegular;
+    font-size: 11.5px;
+    padding-left: 5px;
+
+    &::placeholder {
+      color: $white;
+      opacity: 0.4;
+      font-size: 10px;
+    }
+
+    &:focus {
+      outline: none;
+      cursor: text;
+    }
+  }
+}
+
+.textSearchLight {
+  background-color: $textsearchbg-light;
+  border: 0.5px solid $ogctoggleborder-light;
+
+  img {
+    border-top: 0.5px solid $ogctoggleborder-light;
+  }
+
+  input {
+    color: $text-light;
+    border-top: 0.5px solid $ogctoggleborder-light;
+    border-right: 0.5px solid $ogctoggleborder-light;
+
+    &::placeholder {
+      color: $text-light;
+      opacity: 0.4;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
