@@ -1,0 +1,285 @@
+@import '../../../variables.scss';
+
+.container {
+  padding: 20px;
+  background-color: $containerbgdlp;
+  height: calc(100vh - 120px);
+  overflow: auto;
+
+  .toggleBar {
+    height: 60px;
+    border-radius: 5px;
+    background-color: $sentrequestbg;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex: 10 auto 2;
+
+    .title {
+      padding-left: 20px;
+      font-family: SFProTextMedium;
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: -0.07px;
+      text-align: center;
+      color: $white;
+    }
+
+    .toggleButtons {
+      display: inline-flex;
+      margin-right: 20px;
+
+      .toggleButton {
+        width: 60px;
+        height: 20px;
+        border-radius: 2px;
+        background-color: $purplemain;
+        border-color: $purplemain;
+        font-family: SFProTextMedium;
+        font-size: 12px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.7;
+        letter-spacing: -0.07px;
+        text-align: center;
+        color: $white;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+    }
+  }
+  .header {
+    margin: 0 0 20px 20px;
+    display: flex;
+    width: calc(53% - 20px);
+    flex-direction: row;
+    justify-content: space-between;
+    .headerButton {
+      height: 20px;
+      min-width: 100px;
+      padding: 3px 10px;
+      margin-right: 15px;
+      border-radius: 3px;
+      background-color: $purplemain;
+      font-family: SFProTextRegular;
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 500;
+      letter-spacing: -0.07px;
+      border: none;
+      outline: none;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      .iconBack {
+        margin-right: 5px;
+      }
+
+      .iconUpDown {
+        width: 10px;
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .showTick::before {
+        content: '\2713';
+        position: absolute;
+        left: 6px;
+        top: 6px;
+        background: $purplemain;
+        color: $white;
+      }
+    }
+
+    .teamListBox {
+      position: relative;
+
+      .teamList {
+        margin-top: 2px;
+        z-index: 10;
+        position: absolute;
+        cursor: pointer;
+        border-radius: 4px;
+        background-color: #33354a;
+        border: solid 1px #494b66;
+
+        .teamSelector {
+          border-bottom: 1px solid #494b66;
+          .noTeamOption,
+          .teamOption {
+            min-width: 120px;
+            max-width: 200px;
+            min-height: 15px;
+            background-color: inherit;
+            display: inline-block;
+            font-size: 12px;
+            padding: 4px 8px;
+            margin: 2px 4px;
+            border-radius: 4px;
+            word-wrap: break-word;
+            hyphens: auto;
+            text-align: center;
+          }
+
+          .teamOption:hover {
+            background-color: $purplemain;
+          }
+
+          .noTeamOption {
+            cursor: text;
+          }
+        }
+        .teamSelector:last-child {
+          border-bottom: none;
+        }
+
+        .teamSelectorApplied {
+          .teamOption {
+            background-color: $purplemain;
+          }
+        }
+      }
+    }
+  }
+
+  .tableContainer {
+    margin-left: 20px;
+    overflow: auto;
+  }
+
+  .zeroRoostNetwork {
+    background-color: $containerbgdlp;
+    height: 100%;
+
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .norequestimage {
+      width: 600px;
+      margin-top: 5%;
+    }
+
+    p {
+      margin: 0 auto;
+      font-family: SFProDisplayRegular;
+      font-size: 16px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.25;
+      letter-spacing: 0.6px;
+      text-align: center;
+      color: $white;
+    }
+
+    .button {
+      margin: 0 auto;
+      margin-top: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        margin-right: 5px;
+      }
+
+      .buttontext {
+        font-family: SFProDisplayMedium;
+        font-size: 16px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: -0.07px;
+        text-align: center;
+        color: $white;
+      }
+
+      .addrooster {
+        width: 150px;
+        height: 35px;
+        border-radius: 3px;
+        background-color: $purplemain;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        img {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+.containerLight {
+  background-color: $containerbgdlp-light;
+
+  .toggleBar {
+    background-color: $sentrequestbg-light;
+
+    .title {
+      color: $text-light;
+    }
+
+    .toggleButtons {
+      .toggleButton {
+        background-color: $purplemain;
+        border-color: $purplemain;
+        color: $white;
+      }
+    }
+  }
+
+  .header {
+    .teamListBox {
+      .teamList {
+        background-color: #f5f7fa;
+        border: solid 1px rgba(51, 53, 74, 0.2);
+
+        .teamSelector {
+          border-bottom: 1px solid rgba(51, 53, 74, 0.2);
+          .noTeamOption,
+          .teamOption {
+            background-color: inherit;
+            color: $chip-text-light;
+          }
+
+          .teamOption:hover {
+            background-color: $purplemain;
+            color: $white;
+          }
+        }
+
+        .teamSelectorApplied {
+          .teamOption {
+            background-color: $purplemain;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+  .zeroRoostNetwork {
+    background-color: $zerorequestbg-light;
+
+    p {
+      color: $text-light;
+    }
+  }
+}

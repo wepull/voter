@@ -1,0 +1,846 @@
+@import '../../../../variables.scss';
+
+.mainHeader {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  background-color: $containerbgdlp;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  .topDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $white;
+    width: 30%;
+    height: 60%;
+    // margin: 20px 0 0 0;
+
+    .textHeading {
+      width: 150px;
+      height: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.67;
+      letter-spacing: normal;
+      color: $white;
+      margin-left: auto;
+    }
+    .artifactHeading {
+      margin-left: 35%;
+    }
+    .radioButton {
+      width: 150px;
+      height: 28px;
+      margin-left: 60px;
+      margin-top: 10px;
+    }
+    .collabOptions {
+      display: flex;
+      margin-right: 30px;
+
+      .collabName {
+        width: 150px;
+        height: 20px;
+        margin-left: 30px;
+        justify-content: center;
+
+        .inputText {
+          width: calc(100% - 21px);
+          height: 20px;
+          color: $white;
+          border-top-left-radius: 3px;
+          border-bottom-left-radius: 3px;
+          box-shadow: 0 10px 15px 0 $inputTextBoxshadow;
+          border: solid 0.5px $inputTextBorder;
+          background-color: $shareYamlbg-color;
+          padding: 0px 10px;
+
+          &:focus {
+            outline: none;
+            cursor: text;
+          }
+        }
+        .listOfCollabOptions {
+          position: absolute;
+          max-height: 180px;
+          margin-top: 2px;
+          width: 170px;
+          border-radius: 4px;
+          -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+          box-shadow: 1px 1px 5px 1px $listofRoosterBoxShadow;
+          background-color: $filterborder;
+          z-index: 99;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          overflow: auto;
+
+          .collabOption {
+            width: 154px;
+            height: 15px;
+            background-color: inherit;
+            display: inline-block;
+            font-size: 12px;
+            padding: 8px;
+          }
+          .collabOption:hover {
+            background-color: $purplemain;
+          }
+        }
+      }
+    }
+    .dropdownOption {
+      width: 20px;
+      height: 19px;
+      margin-top: 1px;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+      background-color: $purplemain;
+      cursor: pointer;
+      padding-top: 2px;
+      display: flex;
+      justify-content: center;
+
+      .expandArrowIcon {
+        height: 16px;
+        width: 16px;
+      }
+    }
+  }
+
+  .middleDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 45%;
+    height: 60%;
+    // padding: 2px 0 20px 0;
+    border-left: 1px solid #919190;
+
+    .textHeading {
+      height: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.67;
+      letter-spacing: normal;
+      color: $white;
+    }
+
+    .singleInputDiv {
+      display: flex;
+      flex-direction: row;
+      // margin: 5px 10px;
+      height: 22px;
+
+      .roostersName {
+        width: 180px;
+        height: 20px;
+        margin-left: 5px;
+
+        .inputText {
+          width: calc(100% - 21px);
+          height: 20px;
+          color: $white;
+          border-top-left-radius: 3px;
+          border-bottom-left-radius: 3px;
+          box-shadow: 0 10px 15px 0 $inputTextBoxshadow;
+          border: solid 0.5px $inputTextBorder;
+          background-color: $shareYamlbg-color;
+          padding: 0px 10px;
+
+          &:focus {
+            outline: none;
+            cursor: text;
+          }
+        }
+      }
+
+      .teamName {
+        width: 150px;
+
+        .inputText {
+          width: calc(100% - 21px);
+        }
+      }
+
+      .dropdownOption {
+        width: 20px;
+        height: 19px;
+        margin-top: 1px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        background-color: $purplemain;
+        cursor: pointer;
+        padding-top: 2px;
+        display: flex;
+        justify-content: center;
+
+        .expandArrowIcon {
+          height: 16px;
+          width: 16px;
+        }
+      }
+    }
+
+    .listOfRooster {
+      position: absolute;
+      max-height: 180px;
+      margin-top: 2px;
+      width: 200px;
+      border-radius: 4px;
+      -webkit-backdrop-filter: blur(15px);
+      backdrop-filter: blur(15px);
+      box-shadow: 1px 1px 5px 1px $listofRoosterBoxShadow;
+      background-color: $filterborder;
+      z-index: 99;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      overflow: auto;
+
+      .listContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        .userImage {
+          padding: 5px;
+          height: 30px;
+          width: 30px;
+
+          img {
+            height: 30px;
+            width: 30px;
+            border-radius: 5px;
+          }
+        }
+
+        .userNameHandle {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          // margin-top: 5px;
+          width: calc(100% - 40px);
+
+          .userName {
+            font-size: 13px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.25;
+            letter-spacing: -0.08px;
+            color: $white;
+          }
+
+          .userHandle {
+            opacity: 0.3;
+            font-size: 11px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.15px;
+            color: $white;
+          }
+        }
+      }
+      .listContainer:hover {
+        background-color: $purplemain;
+        border-radius: 3px;
+      }
+
+      .noTeam {
+        padding: 4px 10px;
+        font-size: 11px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.25;
+        letter-spacing: -0.08px;
+        color: $white;
+      }
+    }
+    .listOfTeams {
+      position: absolute;
+      max-height: 180px;
+      margin-top: 2px;
+      width: 170px;
+      border-radius: 4px;
+      -webkit-backdrop-filter: blur(15px);
+      backdrop-filter: blur(15px);
+      box-shadow: 1px 1px 5px 1px $listofRoosterBoxShadow;
+      background-color: $filterborder;
+      z-index: 99;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      overflow: auto;
+
+      .listContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        .userImage {
+          padding: 5px;
+          height: 30px;
+          width: 30px;
+
+          img {
+            height: 30px;
+            width: 30px;
+            border-radius: 5px;
+          }
+        }
+
+        .userNameHandle {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          // margin-top: 5px;
+          width: calc(100% - 40px);
+
+          .userName {
+            font-size: 13px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.25;
+            letter-spacing: -0.08px;
+            color: $white;
+          }
+
+          .userHandle {
+            opacity: 0.3;
+            font-size: 11px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.15px;
+            color: $white;
+          }
+        }
+      }
+      .listContainer:hover {
+        background-color: $purplemain;
+        border-radius: 3px;
+      }
+
+      .noTeam {
+        padding: 4px 10px;
+        font-size: 11px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.25;
+        letter-spacing: -0.08px;
+        color: $white;
+      }
+    }
+
+    .listOfTeamMember {
+      position: absolute;
+      max-height: 180px;
+      margin-top: 2px;
+      width: 200px;
+      border-radius: 4px;
+      -webkit-backdrop-filter: blur(15px);
+      backdrop-filter: blur(15px);
+      box-shadow: 1px 1px 5px 1px $listofRoosterBoxShadow;
+      background-color: $filterborder;
+      z-index: 99;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      overflow: auto;
+
+      [type='checkbox'] {
+        position: absolute;
+        left: -9999px;
+        cursor: pointer;
+        display: none;
+
+        & + label {
+          position: relative;
+          padding-left: 25px;
+          margin-left: 10px;
+          cursor: pointer;
+
+          &:after {
+            content: '\2713';
+            position: absolute;
+            left: 0.2em;
+            top: 12px;
+            font-size: 0.75em;
+            color: $white;
+          }
+
+          // hover style just for information
+          &:hover:before {
+            border: 0.1px solid $purplemain;
+          }
+        }
+
+        &:checked + label:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 12px;
+          width: 14px;
+          height: 14px;
+          background: $purplemain;
+          border-radius: 4px;
+        }
+
+        &:not(checked) + label:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 12px;
+          width: 14px;
+          height: 14px;
+          background: $chip-text-light;
+          border-radius: 4px;
+        }
+
+        // checked mark aspect changes
+        &:not(:checked) + label:after {
+          opacity: 0;
+          transform: scale(0);
+        }
+
+        &:checked + label:after {
+          opacity: 1;
+          transform: scale(1);
+        }
+
+        &:focus {
+          border: none;
+          outline: none;
+        }
+      }
+
+      .memberSelector {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 10px;
+        width: calc(100% - 10px);
+
+        .allLabel {
+          margin-left: 5px;
+          height: 27px;
+          padding-top: 6px;
+        }
+
+        .userImage {
+          padding: 5px;
+          height: 30px;
+          width: 30px;
+
+          img {
+            height: 30px;
+            width: 30px;
+            border-radius: 5px;
+          }
+        }
+
+        .userNameHandle {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          // margin-top: 5px;
+          width: calc(100% - 40px);
+
+          .userName {
+            font-size: 13px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.25;
+            letter-spacing: -0.08px;
+            color: $white;
+          }
+
+          .userHandle {
+            opacity: 0.3;
+            font-size: 11px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.15px;
+            color: $white;
+          }
+        }
+
+        .listContainer {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+            Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+          .userImage {
+            padding: 5px;
+            height: 30px;
+            width: 30px;
+
+            img {
+              height: 30px;
+              width: 30px;
+              border-radius: 5px;
+            }
+          }
+
+          .userNameHandle {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            // margin-top: 5px;
+            width: calc(100% - 40px);
+
+            .userName {
+              font-size: 13px;
+              font-weight: normal;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: 1.25;
+              letter-spacing: -0.08px;
+              color: $white;
+            }
+
+            .userHandle {
+              opacity: 0.3;
+              font-size: 11px;
+              font-weight: normal;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: normal;
+              letter-spacing: 0.15px;
+              color: $white;
+            }
+          }
+        }
+        .listContainer:hover {
+          background-color: $purplemain;
+          border-radius: 3px;
+        }
+
+        .noTeam {
+          padding: 4px 10px;
+          font-size: 11px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.25;
+          letter-spacing: -0.08px;
+          color: $text-light;
+        }
+      }
+      .memberSelector:hover {
+        background-color: $purplemain;
+        border-radius: 3px;
+      }
+
+      .noTeam {
+        padding: 4px 10px;
+        font-size: 11px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.25;
+        letter-spacing: -0.08px;
+        color: $white;
+      }
+    }
+  }
+
+  .bottomDiv {
+    width: 25%;
+    height: 60%;
+    // margin: 0 0 10px 0;
+    // padding: 10px 0 0px 0;
+    border-left: 1px solid #919190;
+
+    .artifactOptions {
+      display: flex;
+      margin-right: 30px;
+
+      .artifactName {
+        width: 150px;
+        height: 20px;
+        margin-left: 30px;
+        justify-content: center;
+
+        .inputText {
+          width: calc(100% - 21px);
+          height: 20px;
+          color: $white;
+          border-top-left-radius: 3px;
+          border-bottom-left-radius: 3px;
+          box-shadow: 0 10px 15px 0 $inputTextBoxshadow;
+          border: solid 0.5px $inputTextBorder;
+          background-color: $shareYamlbg-color;
+          padding: 0px 10px;
+
+          &:focus {
+            outline: none;
+            cursor: text;
+          }
+        }
+        .listOfartifactOptions {
+          position: absolute;
+          max-height: 180px;
+          margin-top: 2px;
+          width: 115px;
+          border-radius: 4px;
+          -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+          box-shadow: 1px 1px 5px 1px $listofRoosterBoxShadow;
+          background-color: $filterborder;
+          z-index: 99;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          overflow: auto;
+
+          .artifactOption {
+            width: 99px;
+            height: 15px;
+            background-color: inherit;
+            display: inline-block;
+            font-size: 12px;
+            padding: 8px;
+          }
+          .artifactOption:hover {
+            background-color: $purplemain;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mainHeaderLight {
+  background-color: $collabsharebgLight;
+
+  .topDiv {
+    color: $text-light;
+
+    .textHeading {
+      color: $text-light;
+    }
+    .collabOptions {
+      .collabName {
+        .inputText {
+          color: $text-light;
+          box-shadow: none;
+          border: solid 0.5px $text-input-border-lite;
+          background-color: $selectednv-background-color-rlp-light;
+        }
+        .listOfCollabOptions {
+          box-shadow: 1px 1px 5px 1px $last-update-text;
+          background-color: $text-input-bg-lite;
+
+          .collabOption {
+            color: $text-light;
+          }
+          .collabOption:hover {
+            background-color: $purplemain;
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .dropdownOption {
+      background-color: $purplemain;
+    }
+  }
+
+  .middleDiv {
+    // border-bottom: 1px solid $dark-border-light;
+    .textHeading {
+      color: $text-light;
+    }
+
+    .singleInputDiv {
+      .textHeading {
+        color: $text-light;
+      }
+
+      .roostersName {
+        .inputText {
+          color: $text-light;
+          box-shadow: none;
+          border: solid 0.5px $text-input-border-lite;
+          background-color: $selectednv-background-color-rlp-light;
+        }
+      }
+
+      .dropdownOption {
+        background-color: $purplemain;
+      }
+    }
+
+    .listOfRooster,
+    .listOfTeams {
+      box-shadow: 1px 1px 5px 1px $last-update-text;
+      background-color: $text-input-bg-lite;
+
+      .listContainer {
+        .userNameHandle {
+          .userName {
+            color: $text-light;
+          }
+
+          .userHandle {
+            color: $text-light;
+          }
+        }
+      }
+      .listContainer:hover {
+        background-color: $purplemain;
+        color: $white;
+        .userNameHandle {
+          .userName {
+            color: $white;
+          }
+
+          .userHandle {
+            color: $white;
+          }
+        }
+      }
+
+      .noTeam {
+        color: $text-light;
+      }
+    }
+
+    .listOfTeamMember {
+      box-shadow: 1px 1px 5px 1px $last-update-text;
+      background-color: $text-input-bg-lite;
+
+      [type='checkbox'] {
+        & + label {
+          &:after {
+            color: $white;
+          }
+
+          // hover style just for information
+          &:hover:before {
+            border: 0.1px solid $purplemain;
+          }
+        }
+
+        &:checked + label:before {
+          background: $purplemain;
+        }
+
+        &:not(checked) + label:before {
+          background: rgba(178, 186, 204, 0.3);
+        }
+      }
+
+      .memberSelector {
+        .allLabel {
+          color: $text-light;
+        }
+
+        .userNameHandle {
+          .userName {
+            color: $text-light;
+          }
+
+          .userHandle {
+            color: $text-light;
+          }
+        }
+
+        .listContainer {
+          .userNameHandle {
+            .userName {
+              color: $text-light;
+            }
+
+            .userHandle {
+              color: $text-light;
+            }
+          }
+        }
+        .listContainer:hover {
+          background-color: $purplemain;
+          color: $white;
+          .userNameHandle {
+            .userName {
+              color: $white;
+            }
+
+            .userHandle {
+              color: $white;
+            }
+          }
+        }
+
+        .noTeam {
+          color: $text-light;
+        }
+      }
+      .memberSelector:hover {
+        background-color: $purplemain;
+      }
+      .noTeam {
+        color: $text-light;
+      }
+    }
+  }
+
+  .bottomDiv {
+    .artifactOptions {
+      .artifactName {
+        .inputText {
+          color: $text-light;
+          box-shadow: none;
+          border: solid 0.5px $text-input-border-lite;
+          background-color: $selectednv-background-color-rlp-light;
+        }
+        .listOfartifactOptions {
+          box-shadow: 1px 1px 5px 1px $last-update-text;
+          background-color: $text-input-bg-lite;
+
+          .artifactOption {
+            color: $text-light;
+          }
+          .artifactOption:hover {
+            background-color: $purplemain;
+            color: $white;
+          }
+        }
+      }
+    }
+    .dropdownOption {
+      background-color: $purplemain;
+    }
+    // border-bottom: 1px solid $dark-border-light;
+  }
+}

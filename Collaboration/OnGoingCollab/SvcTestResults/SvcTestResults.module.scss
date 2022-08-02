@@ -1,0 +1,189 @@
+@import '../../../../variables.scss';
+.svcContainer {
+  display: flex;
+  flex-direction: column;
+  font-family: SFProTextRegular;
+  overflow: hidden;
+
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  .svcContentBody {
+    width: 100%;
+
+    .svcTableHeading {
+      padding-bottom: 15px;
+      border-bottom: 1px solid $text-light;
+    }
+
+    .svcTableBody {
+      height: 450px;
+      font-size: 14px;
+      margin-top: 10px;
+      padding: 10px;
+      overflow: auto;
+      color: $table-text;
+      background-color: $shareYamlData;
+
+      .noRecords {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        color: $white;
+        height: 450px;
+      }
+
+      .impactedSvcContainer {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+
+        .impactedSvcSlider {
+          flex: 0 0 25%;
+          padding-right: 10px;
+          border-right: 1px solid $text-light;
+
+          .impactedSvcSliderHeading {
+            padding-bottom: 8px;
+            border-bottom: 1px solid $text-light;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 700;
+          }
+
+          .impactedSvcSliderContent {
+            display: flex;
+            flex-direction: column;
+
+            .impactedSvcSliderButton {
+              padding: 8px 6px;
+              text-align: center;
+              border-bottom: 1px solid $text-light;
+              cursor: pointer;
+              word-wrap: break-word;
+              hyphens: auto;
+            }
+
+            .impactedSvcSliderButton:hover,
+            .isActive {
+              background-color: $purplemain;
+              color: $white;
+              border-radius: 3px;
+            }
+          }
+        }
+
+        .impactedSvcDetails {
+          padding-left: 10px;
+
+          .impactedSvcSingleDetail {
+            word-wrap: break-word;
+            hyphens: auto;
+            padding: 4px;
+          }
+        }
+      }
+
+      pre {
+        margin: unset;
+      }
+
+      .certificationDetails {
+        display: flex;
+        flex-direction: column;
+
+        .crossIconCSS {
+          display: flex;
+          justify-content: flex-end;
+          cursor: pointer;
+        }
+
+        .clusterDiv {
+          display: flex;
+          flex-direction: row;
+          margin: 5px 10px;
+          span {
+            opacity: 0.8;
+            margin-left: 10px;
+          }
+        }
+
+        .testDiv {
+          display: flex;
+          flex-direction: row;
+
+          margin: 5px 10px;
+          span {
+            opacity: 0.8;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.svcContainerLight {
+  .svcContentBody {
+    .svcTableHeading {
+      border-bottom: 1px solid $text-light;
+    }
+
+    .svcTableBody {
+      color: $table-text;
+      background-color: $white;
+
+      .noRecords {
+        color: $text-light;
+      }
+
+      .impactedSvcContainer {
+        .impactedSvcSlider {
+          border-right: 1px solid $text-light;
+
+          .impactedSvcSliderHeading {
+            border-bottom: 1px solid $text-light;
+            color: $text-light;
+          }
+
+          .impactedSvcSliderContent {
+            .impactedSvcSliderButton {
+              color: $text-light;
+              border-radius: unset;
+            }
+
+            .impactedSvcSliderButton:hover,
+            .isActive {
+              background-color: $purplemain;
+              color: $white;
+            }
+          }
+        }
+
+        .impactedSvcDetails {
+          .impactedSvcSingleDetail {
+            color: $text-light;
+          }
+        }
+      }
+
+      .certificationDetails {
+        .clusterDiv {
+          label,
+          span {
+            color: $text-light;
+          }
+        }
+
+        .testDiv {
+          label,
+          span {
+            color: $text-light;
+          }
+        }
+      }
+    }
+  }
+}

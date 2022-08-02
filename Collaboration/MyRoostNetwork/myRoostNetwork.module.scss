@@ -1,0 +1,250 @@
+@import '../../../variables.scss';
+
+.container {
+  padding: 20px;
+  background-color: $containerbgdlp;
+  height: calc(100vh - 120px);
+  overflow: auto;
+
+  .downArrowIcon {
+    height: 10px;
+    width: 10px;
+  }
+
+  .tableContainer {
+    margin-left: 20px;
+    overflow: auto;
+  }
+
+  .filterAndSearch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .textSearch {
+      display: flex;
+      margin-left: 20px;
+      margin-bottom: 10px;
+    }
+    .filterChip {
+      margin-left: auto;
+      margin-bottom: 10px;
+    }
+    .filtersContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      .togglerBorder {
+        border: 0.5px solid $ogctoggleborder-light;
+      }
+      .typeFilter {
+        position: relative;
+        margin-right: 20px;
+        .typeToggler {
+          display: flex;
+          margin-left: 7px;
+          padding-left: 12px;
+          background-color: $togglerbg;
+          border-radius: 4px;
+          height: 20px;
+          width: 160px;
+          cursor: pointer;
+          font-size: 11px;
+          align-items: center;
+
+          img {
+            margin-left: auto;
+            background-color: $togglerimg-bg;
+            opacity: 0.7;
+            margin-right: 5px;
+          }
+        }
+        .typeFilterBox {
+          z-index: 1000;
+          position: absolute;
+          top: 22px;
+          left: 8px;
+          border-radius: 4px;
+          border-bottom: 0.1px solid $filterborder;
+          background-color: $advfilterbg;
+          border: solid 1px $filterborder;
+          width: 170px;
+
+          .radioButtonsContainer {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            .radioButton {
+              margin-left: 5px;
+            }
+            hr {
+              opacity: 0.1;
+              color: $white;
+            }
+
+            /* Show the indicator (dot/circle) when checked */
+          }
+
+          .actionButtons {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            .clearall {
+              border: none;
+              margin: 5px 5px 5px auto;
+              width: 73px;
+              height: 20px;
+              cursor: pointer;
+              background-color: inherit;
+            }
+
+            button:focus {
+              outline: none;
+            }
+
+            .apply {
+              margin: 5px 5px 5px auto;
+              width: 73px;
+              height: 20px;
+              border: 0.1px solid $purplemain;
+              border-radius: 2px;
+              background-color: $purplemain;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.containerLight {
+  background-color: $containerbgdlp-light;
+  .heading {
+    color: $text-light;
+  }
+  .filterAndSearch {
+    .togglerBorder {
+      border: 0.5px solid $ogctoggleborder-light;
+    }
+    .filterChip {
+      border: 1px solid $ogctoggleborder-light;
+      border-radius: 5px;
+    }
+    .filtersContainer {
+      .typeFilter {
+        .typeToggler {
+          background-color: $ogctogglerbg-light;
+          border: 0.5px solid $ogctoggleborder-light;
+
+          color: $text-light;
+
+          img {
+            background-color: $togglerimg-bg-light;
+          }
+        }
+        .typeFilterBox {
+          border-bottom: 0.1px solid $filterborder-light;
+          background-color: $viewbox-bg-light;
+          border: solid 1px $filterborder-light;
+
+          .actionButtons {
+            .clearall {
+              color: $text-light;
+              background-color: inherit;
+            }
+
+            button:focus {
+              outline: none;
+            }
+
+            .apply {
+              margin: 5px 5px 5px auto;
+              width: 73px;
+              height: 20px;
+              border: 0.1px solid $purplemain;
+              border-radius: 2px;
+              background-color: $purplemain;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.zeroRoostNetwork {
+  background-color: $containerbgdlp;
+  height: calc(100vh - 80px);
+
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .norequestimage {
+    width: 600px;
+    margin-top: 5%;
+  }
+
+  p {
+    margin: 0 auto;
+    font-family: SFProDisplayRegular;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: 0.6px;
+    text-align: center;
+    color: $white;
+  }
+
+  .button {
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      margin-right: 5px;
+    }
+
+    .buttontext {
+      font-family: SFProDisplayMedium;
+      font-size: 16px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: -0.07px;
+      text-align: center;
+      color: $white;
+    }
+
+    .addrooster {
+      width: 150px;
+      height: 35px;
+      border-radius: 3px;
+      background-color: $purplemain;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.zeroRoostNetworkLight {
+  background-color: $zerorequestbg-light;
+
+  p {
+    color: $text-light;
+  }
+}

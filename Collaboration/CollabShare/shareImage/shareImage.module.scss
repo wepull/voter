@@ -1,0 +1,21 @@
+@import '../../../../variables.scss';
+
+.parentContainer {
+  height: 423px;
+  background-color: $containerbgdlp;
+  // border-bottom: 1px solid black;
+
+  .imageContainer {
+    background-color: $containerbgdlp;
+    height: 400px;
+    padding: 10px;
+  }
+}
+.parentContainerLight {
+  background-color: $collabsharebgLight;
+  // border-bottom: 1px solid #b2bacc;
+
+  .imageContainerLight {
+    background-color: $collabsharebgLight;
+  }
+}

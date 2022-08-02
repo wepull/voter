@@ -1,0 +1,85 @@
+@import '../../../../variables.scss';
+
+.footerContainer {
+  height: 33px;
+  background-color: $containerbgdlp;
+  border-top: 1px solid $dark-border;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-self: start;
+  padding: 6px 3px 0 0;
+
+  .cancelButton {
+    width: 78px;
+    height: 20px;
+    opacity: 1;
+    border-radius: 2px;
+    text-align: center;
+
+    span {
+      width: 30px;
+      height: 14px;
+      font-size: 12px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: -0.07px;
+      color: $white;
+    }
+  }
+  .cancelButton:hover {
+    cursor: pointer;
+  }
+
+  .sendButton {
+    width: 78px;
+    height: 20px;
+    opacity: 1;
+    border-radius: 2px;
+    background-color: $purplemain;
+    text-align: center;
+    margin-right: 20px;
+    outline: none;
+
+    span {
+      width: 30px;
+      height: 14px;
+      font-size: 12px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: -0.07px;
+      color: $white;
+    }
+  }
+  .sendButtonDisable {
+    background-color: $sendButtonDisable;
+  }
+  .sendButton:hover {
+    cursor: pointer;
+  }
+}
+
+.footerContainerLight {
+  background-color: $collabsharebgLight;
+  border-top: 1px solid $dark-border-light;
+
+  .cancelButtonLight {
+    span {
+      color: $text-light;
+    }
+  }
+
+  .sendButtonLight {
+    background-color: $purplemain;
+    span {
+      color: $white;
+    }
+  }
+  .sendButtonDisable {
+    background-color: $sendButtonDisable;
+  }
+}

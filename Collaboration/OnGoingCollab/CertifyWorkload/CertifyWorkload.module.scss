@@ -1,0 +1,213 @@
+@import '../../../../variables.scss';
+.certifyWorkloadContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: SFProTextRegular;
+  overflow: hidden;
+
+  .certifiedWorkloadHeading {
+    display: flex;
+    height: 35px;
+    justify-content: center;
+    p {
+      font-size: 16px;
+      font-family: SFProTextMedium;
+      color: $white;
+      font-weight: 700;
+    }
+  }
+
+  .certifiedWorkloadHeading2 {
+    display: flex;
+    p {
+      font-size: 14px;
+      font-family: SFProTextMedium;
+      color: white;
+      font-weight: 500;
+    }
+  }
+
+  .certifyWorkloadBody {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px 20px 10px 20px;
+    font-size: 14px;
+
+    .certifyWorkloadBodyLeft {
+      min-width: 30%;
+      margin-right: 30px;
+      margin-top: 8px;
+    }
+    .certifyWorkloadBodyRight {
+      display: flex;
+      flex-direction: column;
+
+      .eachRow {
+        display: flex;
+        align-items: center;
+        margin: 1px 0;
+      }
+      span {
+        font-size: 13px;
+      }
+      p {
+        font-size: 14px;
+        min-width: 60px;
+        color: $purplemain;
+      }
+    }
+  }
+
+  .inputBox {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0 5px 0;
+    width: 98%;
+
+    .radioButtons {
+      display: flex;
+      flex-direction: row;
+      width: 250px;
+    }
+  }
+
+  .textInput {
+    display: flex;
+    width: 98%;
+    justify-content: space-between;
+    padding: 10px 0 5px 0;
+
+    .header {
+      flex: 1;
+      font-size: 15px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      width: 443px;
+
+      input[type='text'] {
+        width: 443px;
+        height: 20px;
+        border: none;
+        background-color: $text-input-bg;
+        padding-left: 10px;
+        font-size: 0.8rem;
+        border-radius: 3px;
+
+        &:focus {
+          outline: none;
+          cursor: text;
+        }
+      }
+    }
+  }
+
+  textarea {
+    height: 100px;
+    border-radius: 3px;
+    border-color: $gray;
+    width: 96%;
+    background-color: rgba(51, 52, 74, 0.4);
+    font-size: 15px;
+    margin-top: 5px;
+    padding: 5px;
+    resize: none;
+  }
+
+  textarea:focus {
+    outline: none;
+  }
+  .actionButtons {
+    display: flex;
+    align-items: center;
+    height: 50px;
+
+    .certifyWorkloadGitOps,
+    .rejectCertifyWorkload,
+    .certifyWorkload {
+      padding: 8px 16px;
+      border-radius: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $purplemain;
+      color: $white;
+      cursor: pointer;
+      font-size: 12px;
+      margin-right: 16px;
+    }
+  }
+}
+
+.certifyWorkloadContainerLight {
+  .certifiedWorkloadHeading {
+    p {
+      color: $text-light;
+    }
+  }
+  .certifiedWorkloadHeading2 {
+    p {
+      color: $text-light;
+    }
+  }
+
+  .certifyWorkloadBody {
+    color: $text-light;
+
+    .certifyWorkloadBodyRight {
+      span {
+        color: $text-light;
+        font-family: SFProTextRegular;
+      }
+      label {
+        color: $purplemain;
+      }
+    }
+  }
+
+  .inputBox {
+    div label {
+      color: $text-light;
+    }
+  }
+
+  .textInput {
+    .header {
+      .headinfo {
+        color: $text-light;
+      }
+    }
+
+    .info {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      width: 443px;
+
+      input[type='text'] {
+        border: none;
+        background-color: $viewbox-bg-light;
+        color: $text-light;
+
+        &:focus {
+          outline: none;
+          cursor: text;
+        }
+      }
+    }
+  }
+
+  textarea {
+    background-color: $viewbox-bg-light;
+    color: $text-light;
+  }
+}

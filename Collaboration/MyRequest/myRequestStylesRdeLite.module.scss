@@ -1,0 +1,192 @@
+@import '../../../variables.scss';
+
+.container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: $bgcolormyrequest;
+  height: calc(100vh - 150px);
+  width: calc(100vw - 100px);
+
+  overflow: auto;
+
+  .incomingRequests {
+    display: flex;
+    flex-direction: column;
+    .headerContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-left: 20px;
+      .incomingHeader {
+        margin: 20px 20px 20px 20px;
+        font-family: SFProTextSemiBold;
+        font-size: 14px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.14;
+        letter-spacing: 0.29px;
+        color: $white;
+      }
+
+      .seeall {
+        margin: 20px 20px 20px 5px;
+
+        height: 16px;
+        font-family: SFProTextRegular;
+        font-size: 12px;
+        line-height: 1.33;
+        letter-spacing: normal;
+        color: $seealltext;
+        cursor: pointer;
+      }
+    }
+    .incomingRequestContainer {
+      margin-left: 20px;
+    }
+  }
+
+  .sentRequests {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sentRequestsContainer {
+    margin-left: 20px;
+  }
+
+  .headerContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+
+    .sentHeader {
+      margin: 20px 20px 20px 20px;
+      font-family: SFProTextSemiBold;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.14;
+      letter-spacing: 0.29px;
+      color: $white;
+    }
+
+    .seeall {
+      margin: 20px 20px 20px 5px;
+      height: 16px;
+      font-family: SFProTextRegular;
+      font-size: 12px;
+      line-height: 1.33;
+      letter-spacing: normal;
+      color: $seealltext;
+      cursor: pointer;
+    }
+  }
+}
+
+.containerLight {
+  background-color: $bgcolormyrequest-light;
+
+  .incomingRequests {
+    .headerContainer {
+      .incomingHeader {
+        color: $text-light;
+      }
+    }
+  }
+
+  .headerContainer {
+    .sentHeader {
+      color: $text-light;
+    }
+  }
+}
+
+.zerorequests {
+  background-color: $zerorequestbg;
+  height: calc(100vh - 110px);
+
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .norequestimage {
+    width: 600px;
+    margin-top: 5%;
+  }
+
+  p {
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 163px;
+    height: 20px;
+    font-family: SFProDisplayRegular;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: 0.6px;
+    text-align: center;
+    color: $white;
+  }
+
+  .button {
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      margin-right: 5px;
+    }
+
+    .buttontext {
+      font-family: SFProDisplayMedium;
+      font-size: 16px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: -0.07px;
+      text-align: center;
+      color: $white;
+    }
+
+    .addrooster {
+      width: 150px;
+      height: 35px;
+      border-radius: 3px;
+      background-color: $purplemain;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.zerorequestslight {
+  background-color: $zerorequestbg-light;
+
+  p {
+    color: $text-light;
+  }
+
+  .button {
+    .buttontext {
+      color: $text-light;
+    }
+  }
+}
+
+.containerEventViewer {
+  width: calc(100vw - 450px);
+}

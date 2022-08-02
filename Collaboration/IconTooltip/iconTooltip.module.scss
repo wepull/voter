@@ -1,0 +1,10 @@
+@import '../../../variables.scss';
+
+.container {
+  position: relative;
+  display: flex;
+
+  img {
+    cursor: pointer;
+  }
+}

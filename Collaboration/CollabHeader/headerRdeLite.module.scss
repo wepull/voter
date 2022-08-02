@@ -1,0 +1,136 @@
+@import '../../../variables.scss';
+
+.headerContainer {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: $white;
+  position: relative;
+  // background-color: rgba(33, 35, 55, 0.7);
+  background-color: $header-bgcollab;
+  //flex: 2 5 2;
+  .overlay {
+    background-color: $overlay-bg-header;
+    opacity: 0.5;
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    top: 0px;
+    z-index: 9;
+  }
+
+  .heading {
+    display: flex;
+    margin-left: 20px;
+    .collaboration {
+      height: 20px;
+      font-size: 19px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      margin-left: 20px;
+      line-height: 1.25;
+      letter-spacing: normal;
+      color: $white;
+    }
+  }
+
+  .refreshDiv {
+    display: flex;
+    margin-right: 20px;
+    justify-content: space-between;
+    align-items: space-between;
+
+    .lastUpdate {
+      width: auto;
+      margin-right: 16px;
+      height: 16px;
+      opacity: 0.6;
+      font-size: 14px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.45;
+      letter-spacing: 0.1px;
+      color: $white;
+    }
+
+    .refreshIcon {
+      padding-top: 0px;
+      margin-right: 2px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .startTourButton {
+      padding-top: 2px;
+      margin-left: 14px;
+      margin-right: 12px;
+      position: relative;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.headerContainerLight {
+  color: $text-light;
+  position: relative;
+  background-color: $header-bgcollab-light;
+
+  .overlay {
+    background-color: $overlay-bg-header-light;
+  }
+  .heading {
+    .collaboration {
+      color: $text-light;
+    }
+  }
+
+  .refreshDiv {
+    .lastUpdate {
+      color: $text-light;
+    }
+
+    .refreshIcon {
+      padding-top: 0px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .startTourButton {
+      padding-top: 2px;
+      position: relative;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.hr {
+  position: absolute;
+  width: calc(100% - 60px);
+  border-width: 0.1px;
+  margin-left: 40px;
+  border: 1px solid $hr;
+}
+
+.hrLight {
+  border: 1px solid $hr-light;
+}
