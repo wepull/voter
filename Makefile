@@ -22,16 +22,23 @@ test-voter:
 	cp ${PWD}/service-test-suite/voter/voter.spec.js /var/tmp/test/cypress/integration
 	docker run --network="host"  -v /var/tmp/test:/e2e -w /e2e cypress/included:6.2.1 --browser firefox
 
+.PHONY: pre-dockerise
+pre-dockerise:
+	docker pull golang:1.19.3-alpine3.16
+	docker pull alpine:3.16
+	docker pull node:14.21.1-alpine3.16
+	docker pull nginx:stable-alpine
+
 .PHONY: dockerise
-dockerise: build-voter
+dockerise: pre-dockerise build-voter
 
 .PHONY: build-voter
 build-voter:
 ifdef DOCKER_HOST
 	docker -H ${DOCKER_HOST} build -t ${VOTER_IMG}:${COMMITID} -f voter/Dockerfile voter
-	docker -H ${DOCKER_HOST} tag ${VOTER_IMG}:${COMMITID} ${VOTER_IMG}:latest
+	docker -H ${DOCKER_HOST} tag ${VOTER_IMG}:${COMMITID} ${VOTER_IMG}:${IMAGE_TAG}
 else
-	docker build -t ${VOTER_IMG}:${IMAGE_TAG} -f voter/Dockerfile voter
+	docker build -t ${VOTER_IMG}:${COMMITID} -f voter/Dockerfile voter
 	docker tag ${VOTER_IMG}:${COMMITID} ${VOTER_IMG}:${IMAGE_TAG}
 endif
 
