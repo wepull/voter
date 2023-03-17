@@ -13,8 +13,8 @@ Depends on: ballot and ecserver services
 ### Ballot
 
 An backend app for voter written in Golang, to store the votes.
-
-### Election Commissionxx
+    
+### Election Commissionxx.  
 
 An frontend to manage the election candidates and uses ecserver as backend to store candidates lists.
 
